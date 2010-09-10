@@ -18,20 +18,20 @@ require_once __DIR__ . '/../lime/sfBehatLimeNoOutput.class.php';
 
 // Init site browser
 $tester = new lime_test(null, array('output' => new sfBehatLimeNoOutput()));
-$this->browser = new sfTestFunctional(new sfBrowser(), $tester);
+$world->browser = new sfTestFunctional(new sfBrowser(), $tester);
 
 // Helpful closures
-$this->getRequest = function() use($world) {
+$world->getRequest = function() use($world) {
     return $world->browser->getRequest();
 };
-$this->getContext = function() use($world) {
+$world->getContext = function() use($world) {
     return $world->browser->getContext();
 };
-$this->getResponse = function() use($world) {
+$world->getResponse = function() use($world) {
     return $world->browser->getResponse();
 };
 
-$this->guessPath = function($page) use($world) {
+$world->guessPath = function($page) use($world) {
     $routes = $world->getContext()->getRouting()->getRoutes();
     $route = strtolower(strtr($page, array(' ' => '_')));
 

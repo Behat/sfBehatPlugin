@@ -1,6 +1,6 @@
 <?php
 
-$this->bootstrap = function() use($world) {
+$world->bootstrap = function() use($world) {
     static $coreLoaded;
 
     if (!$coreLoaded) {
@@ -13,4 +13,4 @@ $this->bootstrap = function() use($world) {
     include('paths.php');
 };
 
-$this->bootstrap();
+$world->bootstrap();
