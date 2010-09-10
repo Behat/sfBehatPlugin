@@ -58,5 +58,8 @@ EOF;
     $this->getFilesystem()->mirror($skeletonDir.'/app', $testAppDir, $finder, array(
       'override' => $override
     ));
+    $this->getFilesystem()->mirror($skeletonDir.'/root', sfConfig::get('sf_root_dir'), $finder, array(
+      'override' => $override
+    ));
   }
 }

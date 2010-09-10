@@ -32,7 +32,7 @@ $this->getResponse = function() use($world) {
 };
 
 $this->guessPath = function($page) use($world) {
-    $routes = sfContext::getInstance()->getRouting()->getRoutes();
+    $routes = $world->getContext()->getRouting()->getRoutes();
     $route = strtolower(strtr($page, array(' ' => '_')));
 
     if (array_key_exists($route, $routes)) {
