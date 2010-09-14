@@ -7,8 +7,8 @@ sfBehatPlugin is a plugin for symfony applications. It help to write Cucumber-li
 ## Prerequisites ##
 
 1. Behat is written on PHP 5.3, so you need PHP 5.3.2 to run your features;
-2. Download last version of Behat from [http://github.com/everzet/Behat](http://github.com/everzet/Behat);
-3. Symlink `Behat/bin/behat` to your bin folder (`/usr/local/bin` for example).
+2. You need Behat itself. Installation instruction is at [http://everzet.com/Behat](http://everzet.com/Behat);
+3. You need PHPUnit to be available in your PATH.
 
 ## Installation ##
 
@@ -23,8 +23,6 @@ Use this to install as a plugin in a symfony app:
 Use this if you prefer to use git submodules for plugins:
 
 	$ git submodule add git://github.com/everzet/sfBehatPlugin.git plugins/sfBehatPlugin
-	$ git submodule init
-	$ git submodule update
 
 and enable plugin in your ProjectConfigurations class.
 
@@ -58,32 +56,25 @@ or specific feature with:
 
 ## Write Features ##
 
-### Available Steps ###
-
-To see available steps - open `steps/browser_steps.php` under your app features.
-
 ### Write New Steps ###
 
 You can create new steps simply by placing definitions in any `*.php` file under `steps/` folder in your app features.
 
 ### Specify App Routes ###
 
-sfBehatPlugin has base steps to run over your application. One of them is `/^I am on(?: the)? (.*)$/`. This step tries to guess page path from route names, but you can specify path manually in `support/paths.php`:
+sfBehatPlugin has base steps to run over your application. One of them is `/^I am on(?: the)? (.*)$/`. This step tries to load specified page as is, but you can specify path manually in `support/paths.php`:
 
 	<?php
 	$this->pathTo = function($page) use($world) {
 	    switch ($page) {
-	
-	        case 'articles list':
-	          return '/articles/list';
-	
+	        case 'homepage':        return '/';
+	        case 'articles list':   return '/articles';
+	        default:                $page;
 	    }
 	};
-	
 
 ## Contributors ##
 
 * everzet (lead): [http://github.com/everzet](http://github.com/everzet)
 
 Behat is maintained by ever.zet [http://github.com/everzet](http://github.com/everzet)
-Cucumber is maintained by aslakhellesoy [http://github.com/aslakhellesoy](http://github.com/aslakhellesoy)

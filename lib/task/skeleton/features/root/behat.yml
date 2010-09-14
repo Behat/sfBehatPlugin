@@ -1,2 +1,10 @@
 parameters:
-  features.path:  test/features
+  features.path:      test/features/frontend
+
+  environment.class:  sfBrowserEnvironment
+  steps.path:
+    - %%cwd%%/plugins/sfBehatPlugin/features/steps
+    - %%features.path%%/steps
+  hooks.file:
+    - %%features.path%%/support/core_hooks.php
+    - %%features.path%%/support/hooks.php

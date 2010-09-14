@@ -11,10 +11,10 @@
 /**
  * Features folder generator task
  *
- * @package sfBehatPlugin
- * @author  Konstantin Kudryashov <ever.zet@gmail.com>
+ * @package     sfBehatPlugin
+ * @author      Konstantin Kudryashov <ever.zet@gmail.com>
  */
-class behatGenerateTask extends sfBaseTask
+class behatSetupTask extends sfBaseTask
 {
   protected function configure()
   {
@@ -27,13 +27,13 @@ class behatGenerateTask extends sfBaseTask
     ));
 
     $this->namespace        = 'behat';
-    $this->name             = 'generate';
-    $this->briefDescription = 'Generates features folder';
+    $this->name             = 'setup';
+    $this->briefDescription = 'Setups features folder';
     $this->detailedDescription = <<<EOF
-The [behat:generate|INFO] task generates features folder for specific app.
+The [behat:setup|INFO] task setups features folder for specific app.
 Call it with:
 
-  [php symfony behat:generate|INFO]
+  [php symfony behat:setup|INFO]
 EOF;
   }
 

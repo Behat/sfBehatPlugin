@@ -11,8 +11,8 @@
 /**
  * Feature generating task
  *
- * @package sfBehatPlugin
- * @author  Konstantin Kudryashov <ever.zet@gmail.com>
+ * @package     sfBehatPlugin
+ * @author      Konstantin Kudryashov <ever.zet@gmail.com>
  */
 class behatGenerateFeatureTask extends sfBaseTask
 {
@@ -39,14 +39,15 @@ EOF;
     $app    = $arguments['application'];
     $module = $arguments['module'];
 
-    $featurePath = sfConfig::get('sf_test_dir').'/features/'.$app.'/'.$module.'.feature';
+    $featuresPath   = sfConfig::get('sf_test_dir') . '/features/' . $app;
+    $feature        = $featuresPath . '/' . $module.'.feature';
 
-    if (!is_dir($testAppDir))
+    if (!is_dir($featuresPath))
     {
-      throw new sfCommandException(sprintf('The app "%s" features doesn\'t exists. Create features folder with `behat:genereate`', $testAppDir));
+      throw new sfCommandException(sprintf('The app "%s" features doesn\'t exists. Create features folder with `behat:genereate`', $featuresPath));
     }
 
-    if (is_file($featurePath))
+    if (is_file($feature))
     {
       throw new sfCommandException(sprintf('The feature "%s" already exists in app.', $module, $app));
     }
@@ -66,9 +67,9 @@ EOF;
     );
 
     // create basic feature
-    $this->getFilesystem()->copy($skeletonDir.'/feature.feature', $featurePath);
+    $this->getFilesystem()->copy($skeletonDir.'/feature.feature', $feature);
 
     // customize feature file
-    $this->getFilesystem()->replaceTokens($featurePath, '##', '##', $constants);
+    $this->getFilesystem()->replaceTokens($feature, '##', '##', $constants);
   }
 }
