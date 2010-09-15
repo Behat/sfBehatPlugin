@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.4.6" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
+ <name>sfBehatPlugin</name>
+ <channel>plugins.symfony-project.org</channel>
+ <summary>Behavior Driven Development in symfony</summary>
+ <description>sfBehatPlugin is a plugin for symfony applications. It help to write Cucumber-like Behat features to test symfony applications.</description>
+ <lead>
+  <name>ever.zet</name>
+  <user>everzet</user>
+  <email>ever.zet@gmail.com</email>
+  <active>yes</active>
+ </lead>
+ <date>2010-09-15</date>
+ <version>
+  <release>1.0.0</release>
+  <api>1.0.0</api>
+ </version>
+ <stability>
+  <release>stable</release>
+  <api>stable</api>
+ </stability>
+ <license uri="http://www.symfony-project.org/license">MIT license</license>
+ <notes>-</notes>
+ <contents>
+  <dir name="/">
+   <file role="data" name="README" />
+   <file role="data" name="LICENSE" />
+   <dir name="features">
+     <dir name="steps">
+       <file role="data" name="tester_browser_steps.php" />
+       <file role="data" name="tester_form_steps.php" />
+       <file role="data" name="tester_mailer_steps.php" />
+       <file role="data" name="tester_request_steps.php" />
+       <file role="data" name="tester_response_steps.php" />
+       <file role="data" name="tester_user_steps.php" />
+       <file role="data" name="tester_view_cache_steps.php" />
+     </dir>
+   </dir>
+   <dir name="lib">
+      <dir name="browser">
+        <file role="data" name="sfBrowserEnvironment.class.php" />
+        <file role="data" name="sfLimePhpUnitAdapter.class.php" />
+      </dir>
+      <dir name="task">
+        <file role="data" name="behatGenerateFeatureTask.class.php" />
+        <file role="data" name="behatSetupTask.class.php" />
+        <dir name="skeleton">
+          <dir name="feature">
+            <file role="data" name="feature.feature" />
+          </dir>
+          <dir name="features">
+            <dir name="app">
+              <dir name="support">
+                <file role="data" name="core_hooks.php" />
+                <file role="data" name="env.php" />
+                <file role="data" name="paths.php" />
+              </dir>
+            </dir>
+            <dir name="root">
+              <file role="data" name="behat.yml" />
+            </dir>
+          </dir>
+        </dir>
+      </dir>
+    </dir>
+  </dir>
+ </contents>
+ <dependencies>
+  <required>
+    <php>
+      <min>5.3.1</min>
+    </php>
+    <pearinstaller>
+      <min>1.4.2</min>
+    </pearinstaller>
+    <package>
+      <name>symfony</name>
+      <channel>pear.symfony-project.com</channel>
+      <min>1.2.0</min>
+      <max>1.5.0</max>
+      <exclude>1.5.0</exclude>
+    </package>
+  </required>
+ </dependencies>
+ <phprelease />
+ <changelog>
+
+  <release>
+   <version>
+     <release>1.0.0</release>
+     <api>1.0.0</api>
+   </version>
+   <stability>
+     <release>stable</release>
+     <api>stable</api>
+   </stability>
+   <license uri="http://www.symfony-project.org/license">MIT license</license>
+   <date>2010-09-15</date>
+   <license>MIT</license>
+   <notes>
+     * initial release
+   </notes>
+  </release>
+
+ </changelog>
+</package>

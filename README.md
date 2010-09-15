@@ -12,6 +12,12 @@ sfBehatPlugin is a plugin for symfony applications. It help to write Cucumber-li
 
 ## Installation ##
 
+### Using symfony:plugin ###
+
+Use this to install as a plugin in a symfony app:
+
+	$ symfony plugin:install sfBehatPlugin
+
 ### Using git clone ###
 
 Use this to install as a plugin in a symfony app:
@@ -32,7 +38,7 @@ and enable plugin in your ProjectConfigurations class.
 
 After installation, you need to create features folders for your applications inside symfony's `test` folder. To do this, simply run:
 
-	symfony behat:generate frontend
+	symfony behat:init frontend
 
 where `frontend` is your application name.
 
@@ -53,6 +59,10 @@ You can either run all app tests with:
 or specific feature with:
 
 	behat test/features/frontend/main.feature
+
+or all frontend features with simply:
+
+	behat
 
 ## Write Features ##
 
