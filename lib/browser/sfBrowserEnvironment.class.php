@@ -25,7 +25,8 @@ class sfBrowserEnvironment extends Everzet\Behat\Environment\WorldEnvironment
     $this->context     = $this->browser->getContext();
     $this->request     = $this->browser->getRequest();
     $this->response    = $this->browser->getResponse();
-
+    $this->form        = new sfTesterForm($this->browser, $this->browser->test());
+    
     $this->pathTo = function($page) {
       return $page;
     };
@@ -35,7 +36,8 @@ class sfBrowserEnvironment extends Everzet\Behat\Environment\WorldEnvironment
         'response'  => 'sfTesterResponse',
         'user'      => 'sfTesterUser',
         'mailer'    => 'sfTesterMailer',
-        'cache'     => 'sfTesterViewCache'
+        'cache'     => 'sfTesterViewCache',
+        'form'      => 'sfTesterForm'
     ));
 
     parent::__construct($envFile);
