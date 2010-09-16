@@ -9,36 +9,36 @@
  */
 
 $steps->When('/^I fill in "([^"]*)" with "([^"]*)"$/', function($world, $field, $value) {
-    $world->form_parameters[$field] = $value;
+    $world->inputFields[$field] = $value;
 });
 
 $steps->When('/^I select "([^"]*)" from "([^"]*)"$/', function($world, $value, $field) {
-    $world->form_parameters[$field] = $value;
+    $world->inputFields[$field] = $value;
 });
 
 $steps->When('/^I check "([^"]*)"$/', function($world, $field) {
-    $world->form_parameters[$field] = true;
+    $world->inputFields[$field] = true;
 });
 
 $steps->When('/^I uncheck "([^"]*)"$/', function($world, $field) {
-    $world->form_parameters[$field] = false;
+    $world->inputFields[$field] = false;
 });
 
 $steps->When('/^I attach the file at "([^"]*)" to "([^"]*)"$/', function($world, $path, $field) {
-    $world->form_parameters[$field] = $path;
+    $world->inputFields[$field] = $path;
 });
 
 $steps->When('/^I press "([^"]*)" in (.*) form$/', function($world, $button, $form) {
-    $world->browser->click($button, array($form => $world->form_parameters), array('_with_csrf' => true));
-    $world->form_parameters = array();
+    $world->browser->click(
+        $button, array($form => $world->inputFields), array('_with_csrf' => true)
+    );
+    $world->inputFields = array();
 });
 
-$steps->Then('/^the form should have (\d+) errors$/', function($world, $error_count) {
-    $world->form->initialize();
-    $world->form->hasErrors(intval($error_count));
+$steps->Then('/^The form should have (\d+) errors$/', function($world, $errorsCount) {
+    $world->browser->with('form')->hasErrors(intval($errorsCount));
 });
 
-$steps->Then('/^the field "([^"]*)" should have the error "([^"]*)"$/', function($world, $field, $error) {
-    $world->form->initialize();
-    $world->form->isError($field, $error);
+$steps->Then('/^The field "([^"]*)" should have the "([^"]*)" error$/', function($world, $field, $error) {
+    $world->browser->with('form')->isError($field, $error);
 });
