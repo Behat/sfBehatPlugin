@@ -10,10 +10,10 @@
   <email>ever.zet@gmail.com</email>
   <active>yes</active>
  </lead>
- <date>2010-09-15</date>
+ <date>2010-09-16</date>
  <version>
-  <release>1.0.0</release>
-  <api>1.0.0</api>
+  <release>1.0.1</release>
+  <api>1.0.1</api>
  </version>
  <stability>
   <release>stable</release>
@@ -84,6 +84,24 @@
  </dependencies>
  <phprelease />
  <changelog>
+
+   <release>
+    <version>
+      <release>1.0.1</release>
+      <api>1.0.1</api>
+    </version>
+    <stability>
+      <release>stable</release>
+      <api>stable</api>
+    </stability>
+    <license uri="http://www.symfony-project.org/license">MIT license</license>
+    <date>2010-09-16</date>
+    <license>MIT</license>
+    <notes>
+      * refactored sfBrowserEnvironment to match Behat v0.1.4 API
+      * refactored form steps and added form tester (thanks to Don Pinkster - http://github.com/donpinkster)
+    </notes>
+   </release>
 
   <release>
    <version>
