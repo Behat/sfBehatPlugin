@@ -17,9 +17,9 @@
 class sfBrowserEnvironment extends Everzet\Behat\Environment\WorldEnvironment
 {
   /**
-   * @see Everzet\Behat\Environment\WorldEnvironment
+   * Inits sfBrowser & sfTestFunctional
    */
-  public function __construct($envFile)
+  public function __construct()
   {
     $this->browser     = new sfTestFunctional(new sfBrowser(), new sfLimePhpUnitAdapter());
     $this->context     = $this->browser->getContext();
@@ -37,7 +37,5 @@ class sfBrowserEnvironment extends Everzet\Behat\Environment\WorldEnvironment
         'mailer'    => 'sfTesterMailer',
         'cache'     => 'sfTesterViewCache'
     ));
-
-    parent::__construct($envFile);
   }
 }
