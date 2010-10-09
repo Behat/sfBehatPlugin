@@ -1,10 +1,10 @@
 parameters:
-  features.path:      test/features/frontend
+  behat.features.path:      test/features/frontend
 
-  environment.class:  sfBrowserEnvironment
-  steps.path:
-    - %%cwd%%/plugins/sfBehatPlugin/features/steps
-    - %%features.path%%/steps
-  hooks.file:
-    - %%features.path%%/support/core_hooks.php
-    - %%features.path%%/support/hooks.php
+  behat.environment.class:  sfBrowserEnvironment
+  behat.steps.path:
+    - %%behat.work.path%%/plugins/sfBehatPlugin/features/steps
+    - %%behat.features.path%%/steps
+  behat.hooks.file:
+    - %%behat.features.path%%/support/core_hooks.php
+    - %%behat.features.path%%/support/hooks.php

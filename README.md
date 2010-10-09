@@ -8,7 +8,7 @@ sfBehatPlugin is a plugin for symfony applications. It help to write Cucumber-li
 
 1. Behat is written on PHP 5.3, so you need PHP 5.3.2 to run your features;
 2. You need Behat itself. Installation instruction is at [http://everzet.com/Behat](http://everzet.com/Behat);
-3. You need PHPUnit to be available in your PATH.
+3. You need PHPUnit 3.5.0 to be available in your PATH.
 
 ## Installation ##
 
