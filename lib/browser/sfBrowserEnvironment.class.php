@@ -21,7 +21,7 @@ class sfBrowserEnvironment extends Everzet\Behat\Environment\WorldEnvironment
    */
   public function __construct()
   {
-    $this->browser     = new sfTestFunctional(new sfBrowser(), new sfLimePhpUnitAdapter());
+    $this->browser     = new sfBehatTestFunctional(new sfBrowser(), new sfLimePhpUnitAdapter());
     $this->context     = $this->browser->getContext();
     $this->request     = $this->browser->getRequest();
     $this->response    = $this->browser->getResponse();
