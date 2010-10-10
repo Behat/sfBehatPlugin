@@ -38,7 +38,7 @@ and enable plugin in your ProjectConfigurations class.
 
 After installation, you need to create features folders for your applications inside symfony's `test` folder. To do this, simply run:
 
-	symfony behat:init frontend
+	symfony behat:setup frontend
 
 where `frontend` is your application name.
 
