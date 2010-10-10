@@ -64,6 +64,13 @@ or all frontend features with simply:
 
 	behat
 
+sfBehatPlugin installs `behat.yml` into your project root. This is a Behat configuration file for sf environment. So, if
+you want to run your symfony features from different directory - specify configuration path manually with
+(-c|--configuration option) like that:
+
+    behat -c ../behat.yml
+
+
 ## Write Features ##
 
 ### Write New Steps ###
