@@ -3,7 +3,7 @@ parameters:
 
   behat.environment.class:  sfBrowserEnvironment
   behat.steps.path:
-    - %%behat.work.path%%/plugins/sfBehatPlugin/features/steps
+    - %%behat.configuration.path%%/plugins/sfBehatPlugin/features/steps
     - %%behat.features.path%%/steps
   behat.hooks.file:
     - %%behat.features.path%%/support/core_hooks.php
