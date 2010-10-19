@@ -9,3 +9,4 @@ $world->pathTo = function($page) use($world) {
         default:            return $page;
     }
 };
+

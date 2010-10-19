@@ -61,15 +61,14 @@ EOF;
       $skeletonDir = dirname(__FILE__).'/skeleton/feature';
     }
 
-    $constants = array(
-      'APP_NAME'     => $app,
-      'MODULE_NAME'  => $module
-    );
-
     // create basic feature
     $this->getFilesystem()->copy($skeletonDir.'/feature.feature', $feature);
 
     // customize feature file
-    $this->getFilesystem()->replaceTokens($feature, '##', '##', $constants);
+    $this->getFilesystem()->replaceTokens($feature, '##', '##', array(
+      'APP_NAME'     => $app,
+      'MODULE_NAME'  => $module
+    ));
   }
 }
+

@@ -19,3 +19,4 @@ $hooks->before('features.load', function($event) {
     $app = basename(dirname(__DIR__));
     require_once(__DIR__ . '/../../../bootstrap/functional.php');
 });
+

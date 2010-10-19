@@ -53,6 +53,10 @@ EOF;
       $skeletonDir = dirname(__FILE__).'/skeleton/features';
     }
 
+    if (file_exists(sfConfig::get('sf_root_dir') . '/behat.yml')) {
+      $this->getFilesystem()->remove(sfConfig::get('sf_root_dir') . '/behat.yml');
+    }
+
     // create basic application features
     $finder = sfFinder::type('any')->discard('.sf');
     $this->getFilesystem()->mirror($skeletonDir.'/app', $testAppDir, $finder, array(
@@ -63,3 +67,4 @@ EOF;
     ));
   }
 }
+
