@@ -10,9 +10,9 @@
         <email>ever.zet@gmail.com</email>
         <active>yes</active>
     </lead>
-    <date>2010-10-19</date>
+    <date>2010-10-20</date>
     <version>
-        <release>1.1.0</release>
+        <release>1.1.1</release>
         <api>1.1.0</api>
     </version>
     <stability>
@@ -39,7 +39,6 @@
             <dir name="lib">
                 <dir name="browser">
                     <file role="data" name="sfBrowserEnvironment.class.php" />
-                    <file role="data" name="sfLimePhpUnitAdapter.class.php" />
                 </dir>
                 <dir name="task">
                     <file role="data" name="behatGenerateFeatureTask.class.php" />
@@ -64,6 +63,13 @@
                         </dir>
                     </dir>
                 </dir>
+                <dir name="test">
+                    <file role="data" name="sfLimePhpUnitAdapter.class.php" />
+                    <file role="data" name="sfBehatTestFunctional.class.php" />
+                    <file role="data" name="sfBehatTesterForm.class.php" />
+                    <file role="data" name="sfBehatTesterMailer.class.php" />
+                    <file role="data" name="sfBehatTesterResponse.class.php" />
+                </dir>
             </dir>
         </dir>
     </contents>
@@ -86,6 +92,24 @@
     </dependencies>
     <phprelease />
     <changelog>
+
+        <release>
+            <version>
+                <release>1.1.1</release>
+                <api>1.1.0</api>
+            </version>
+            <stability>
+                <release>stable</release>
+                <api>stable</api>
+            </stability>
+            <license uri="http://www.symfony-project.org/license">MIT license</license>
+            <date>2010-10-20</date>
+            <license>MIT</license>
+            <notes>
+                * Mailer, Form and Response testers debug steps (`Then Print debug`, `Then Print form debug`, `Then Print
+                mailer debug`
+            </notes>
+        </release>
 
         <release>
             <version>
