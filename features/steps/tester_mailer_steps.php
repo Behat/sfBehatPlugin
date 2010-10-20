@@ -19,7 +19,7 @@ $steps->Then('/^(\d+) mails was sent$/', function($world, $count) {
 $steps->Then('/^Mail to "([^"]*)" was sent with:$/', function($world, $to, $pystring) {
     $world->browser->with('mailer')->
         withMessage($to)->
-        checkBody($pystring);
+        checkBody((string) $pystring);
 });
 
 $steps->Then('/^"([^"]*)" header in "([^"]*)" mail was set to "([^"]*)"$/', function($world, $key, $to, $val) {
