@@ -27,3 +27,7 @@ $steps->Then('/^"([^"]*)" header in "([^"]*)" mail was set to "([^"]*)"$/', func
         withMessage($to)->
         checkHeader($key, $val);
 });
+
+$steps->Then('/^Print mailer debug$/', function($world) {
+    $world->printTesterDebug('mailer');
+});

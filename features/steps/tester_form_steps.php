@@ -42,3 +42,7 @@ $steps->Then('/^The form should have (\d+) errors$/', function($world, $errorsCo
 $steps->Then('/^The field "([^"]*)" should have the "([^"]*)" error$/', function($world, $field, $error) {
     $world->browser->with('form')->isError($field, $error);
 });
+
+$steps->Then('/^Print form debug$/', function($world) {
+    $world->printTesterDebug('form');
+});

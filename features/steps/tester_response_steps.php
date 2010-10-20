@@ -53,11 +53,10 @@ $steps->Then('/^I was not redirected$/', function($world) {
     $world->browser->with('response')->isRedirected(false);
 });
 
-$steps->Then('/^Print (.*) debug$/', function($world, $tester) {
-    ob_start();
-    $world->browser->with($tester)->debug();
-    $debug = ob_get_contents();
-    ob_end_clean();
+$steps->Then('/^Print debug$/', function($world) {
+    $world->printTesterDebug('response');
+});
 
-    $world->printDebug($debug);
+$steps->Then('/^Print output$/', function($world) {
+    $world->printTesterDebug('response', array(true));
 });

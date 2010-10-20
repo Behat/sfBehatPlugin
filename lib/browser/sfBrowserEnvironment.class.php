@@ -21,22 +21,42 @@ class sfBrowserEnvironment extends Everzet\Behat\Environment\WorldEnvironment
    */
   public function __construct()
   {
-    $this->browser     = new sfBehatTestFunctional(new sfBrowser(), new sfLimePhpUnitAdapter());
-    $this->context     = $this->browser->getContext();
-    $this->request     = $this->browser->getRequest();
-    $this->response    = $this->browser->getResponse();
+    $world            = $this;
+    $this->browser    = new sfBehatTestFunctional(new sfBrowser(), new sfLimePhpUnitAdapter());
+    $this->context    = $this->browser->getContext();
+    $this->request    = $this->browser->getRequest();
+    $this->response   = $this->browser->getResponse();
 
     $this->pathTo = function($page) {
       return $page;
     };
 
     $this->browser->setTesters(array(
+        'response'  => 'sfBehatTesterResponse',
+        'form'      => 'sfBehatTesterForm',
+        'mailer'    => 'sfBehatTesterMailer',
         'request'   => 'sfTesterRequest',
-        'response'  => 'sfTesterResponse',
         'user'      => 'sfTesterUser',
-        'mailer'    => 'sfTesterMailer',
         'cache'     => 'sfTesterViewCache',
-        'form'      => 'sfTesterForm'
     ));
+  }
+
+  /**
+   * Print custom tester debug. 
+   * 
+   * @param   string  $tester tester name
+   * @param   array   $args   additional arguments to debug (optional)
+   */
+  public function printTesterDebug($tester, $args = array())
+  {
+    ob_start();
+
+    $tester = $this->browser->with($tester);
+    call_user_func_array(array($tester, 'debug'), $args);
+    $debug = ob_get_contents();
+
+    ob_end_clean();
+
+    $this->printDebug($debug);
   }
 }
