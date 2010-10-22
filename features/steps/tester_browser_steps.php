@@ -29,7 +29,7 @@ $steps->When('/^I go forward$/', function($world) {
 });
 
 $steps->When('/^I send post to (.*) with:$/', function($world, $page, $table) {
-    $world->browser->post($world->pathTo($page), $table);
+    $world->browser->post($world->pathTo($page), $table->getHash());
 });
 
 $steps->When('/^I follow redirect$/', function($world) {
