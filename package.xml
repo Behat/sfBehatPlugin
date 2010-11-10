@@ -10,7 +10,7 @@
         <email>ever.zet@gmail.com</email>
         <active>yes</active>
     </lead>
-    <date>2010-12-10</date>
+    <date>2010-11-10</date>
     <version>
         <release>1.1.3</release>
         <api>1.1.0</api>
@@ -103,7 +103,7 @@
                 <api>stable</api>
             </stability>
             <license uri="http://www.symfony-project.org/license">MIT license</license>
-            <date>2010-12-10</date>
+            <date>2010-11-10</date>
             <license>MIT</license>
             <notes>
                 * Behat v0.3 support
