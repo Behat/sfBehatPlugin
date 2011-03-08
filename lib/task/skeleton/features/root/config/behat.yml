@@ -1,10 +1,11 @@
-parameters:
-  behat.features.path:      test/features/frontend
+paths:
+    base:           test/features/frontend
+    bootstrap:
+        - %behat.paths.support%/bootstrap.php
+        - BEHAT_CONFIG_PATH/../plugins/sfBehatPlugin/features/support/bootstrap.php
+    steps:
+        - BEHAT_CONFIG_PATH/../plugins/sfBehatPlugin/features/steps
+        - %behat.paths.features%/steps
 
-  behat.environment.class:  sfBrowserEnvironment
-  behat.steps.path:
-    - %behat.configuration.path%/../plugins/sfBehatPlugin/features/steps
-    - %behat.features.path%/steps
-  behat.hooks.file:
-    - %behat.features.path%/support/core_hooks.php
-    - %behat.features.path%/support/hooks.php
+classes:
+    environment:    sfBrowserEnvironment
