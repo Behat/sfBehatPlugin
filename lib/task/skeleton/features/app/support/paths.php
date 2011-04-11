@@ -1,6 +1,6 @@
 <?php
 
-$world->pathTo = function($page) use($world) {
+$world->getPathTo = function($page) use($world) {
     switch ($page) {
 
         // Define custom path aliases here

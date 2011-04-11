@@ -17,9 +17,9 @@ $steps->Then('/^Page is not cached$/', function($world) {
 });
 
 $steps->Then('/^Page (.*) is cached$/', function($world, $page) {
-    $world->browser->with('cache')->isUriCached($world->pathTo($page));
+    $world->browser->with('cache')->isUriCached($world->getPathTo($page));
 });
 
 $steps->Then('/^Page (.*) is not cached$/', function($world, $page) {
-    $world->browser->with('cache')->isUriCached($world->pathTo($page), false);
+    $world->browser->with('cache')->isUriCached($world->getPathTo($page), false);
 });

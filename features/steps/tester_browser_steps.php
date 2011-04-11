@@ -9,11 +9,11 @@
  */
 
 $steps->Given('/^I am on(?: the)? (.*)$/', function($world, $page) {
-    $world->browser->get($world->pathTo($page));
+    $world->browser->get($world->getPathTo($page));
 });
 
 $steps->When('/^I go to(?: the)? (.*)$/', function($world, $page) {
-    $world->browser->get($world->pathTo($page));
+    $world->browser->get($world->getPathTo($page));
 });
 
 $steps->When('/^I (?:follow|click)(?: the)? "([^"]*)"(?: link)*$/', function($world, $link) {
@@ -29,7 +29,7 @@ $steps->When('/^I go forward$/', function($world) {
 });
 
 $steps->When('/^I send post to (.*) with:$/', function($world, $page, $table) {
-    $world->browser->post($world->pathTo($page), $table->getHash());
+    $world->browser->post($world->getPathTo($page), $table->getHash());
 });
 
 $steps->When('/^I follow redirect$/', function($world) {
