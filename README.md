@@ -82,7 +82,7 @@ You can create new steps simply by placing definitions in any `*.php` file under
 sfBehatPlugin has base steps to run over your application. One of them is `/^I am on(?: the)? (.*)$/`. This step tries to load specified page as is, but you can specify path manually in `support/paths.php`:
 
 	<?php
-	$this->pathTo = function($page) use($world) {
+	$this->getPathTo = function($page) use($world) {
 	    switch ($page) {
 	        case 'homepage':        return '/';
 	        case 'articles list':   return '/articles';
