@@ -112,10 +112,12 @@ Behat+Mink provides base steps to run over your application. One of them is `/^I
 <?php
 // ...
 $this->getPathTo = function($page) use($world) {
+    $basePath = $world->getParameter('start_url');
+
     switch ($page) {
-        case 'homepage':        return 'http://symfony1-proj.dev/';
-        case 'articles list':   return 'http://symfony1-proj.dev/articles';
-        default:                'http://symfony1-proj.dev/' . $page;
+        case 'homepage':        return $basePath;
+        case 'articles list':   return $basePath . 'articles';
+        default:                return $basePath . ltrim($page, '/');
     }
 };
 ```
