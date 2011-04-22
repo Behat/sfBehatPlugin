@@ -106,18 +106,24 @@ You can create new steps simply by placing definitions in any `*.php` file under
 
 ### Specify App Routes ###
 
-sfBehatPlugin has base steps to run over your application. One of them is `/^I am on(?: the)? (.*)$/`. This step tries to load specified page as is, but you can specify path manually in `support/paths.php`:
+Behat+Mink provides base steps to run over your application. One of them is `/^I am on (.+)$/`. This step tries to load specified page as is, but you can specify path manually in `support/paths.php`:
 
 ``` php
 <?php
 // ...
 $this->getPathTo = function($page) use($world) {
     switch ($page) {
-        case 'homepage':        return '/';
-        case 'articles list':   return '/articles';
-        default:                $page;
+        case 'homepage':        return 'http://symfony1-proj.dev/';
+        case 'articles list':   return 'http://symfony1-proj.dev/articles';
+        default:                'http://symfony1-proj.dev/' . $page;
     }
 };
+```
+
+You can list all available steps with:
+
+``` bash
+behat --steps --lang en
 ```
 
 ## Contributors ##
