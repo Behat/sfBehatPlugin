@@ -1,11 +1,8 @@
-paths:
-    base:           test/features/frontend
-    bootstrap:
-        - %behat.paths.support%/bootstrap.php
-        - BEHAT_CONFIG_PATH/../plugins/sfBehatPlugin/features/support/bootstrap.php
-    steps:
-        - BEHAT_CONFIG_PATH/../plugins/sfBehatPlugin/features/steps
-        - %behat.paths.features%/steps
-
-classes:
-    environment:    sfBrowserEnvironment
+default:
+    paths:
+        features:       %%BEHAT_CONFIG_PATH%%/../test/features/frontend
+    environment:
+        parameters:
+            start_url:  ~
+imports:
+    - mink/behat.yml

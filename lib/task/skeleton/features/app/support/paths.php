@@ -1,6 +1,10 @@
 <?php
 
-$world->pathTo = function($page) use($world) {
+/**
+ * Configure Mink routes generation here
+ */
+
+$world->getPathTo = function($page) use($world) {
     switch ($page) {
 
         // Define custom path aliases here

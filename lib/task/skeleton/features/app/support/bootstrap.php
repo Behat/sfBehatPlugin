@@ -1,11 +1,12 @@
 <?php
 
 /*
- * This file is part of the sfBehatPlugin package.
- * (c) 2011 Konstantin Kudryashov <ever.zet@gmail.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
+ * Place your bootstrap scripts here.
  */
 
-define('SF_TESTAPP_NAME', basename(dirname(__DIR__)));
+require_once 'mink/autoload.php';
+require_once 'PHPUnit/Autoload.php';
+require_once 'PHPUnit/Framework/Assert/Functions.php';
+
+$app = basename(dirname(__DIR__));
+require_once __DIR__ . '/../../../../test/bootstrap/functional.php';
