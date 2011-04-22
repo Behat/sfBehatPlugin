@@ -4,12 +4,29 @@
 
 sfBehatPlugin is a plugin for symfony applications. It help to write Cucumber-like Behat features to test symfony applications.
 
-## Prerequisites ##
+## Requirements:
 
-1. Behat is written on PHP 5.3, so you need PHP 5.3.2 to run your features;
-2. Behat itself. Installation instruction and documentation are on [http://behat.org](http://behat.org);
-3. Mink. (`pear install behat/mink-demo`);
-4. You need PHPUnit 3.5.0 to be available in your PATH.
+You need a valid PHPUnit 3.6 installation:
+
+``` bash
+pear channel-discover pear.phpunit.de
+pear channel-discover components.ez.no
+pear channel-discover pear.symfony-project.com
+
+pear install phpunit/PHPUnit
+```
+
+And of course, you need to install Behat and Mink:
+
+``` bash
+pear channel-discover pear.behat.org
+
+pear install behat/behat
+pear install behat/mink-beta
+```
+
+Also, you need to install Sahi if you want to test your website in a real browser.  
+Download the Sahi jar from the [http://sahi.co.in/w/](Sahi website)
 
 ## Installation ##
 
