@@ -35,7 +35,7 @@ Download the Sahi jar from the [http://sahi.co.in/w/](Sahi website)
 Use this to install as a plugin in a symfony app:
 
 ``` bash
-$> cd plugins && git clone git://github.com/Behat/sfBehatPlugin.git
+cd plugins && git clone git://github.com/Behat/sfBehatPlugin.git
 ```
 
 ### Using git submodules ###
@@ -43,7 +43,7 @@ $> cd plugins && git clone git://github.com/Behat/sfBehatPlugin.git
 Use this if you prefer to use git submodules for plugins:
 
 ``` bash
-$> git submodule add git://github.com/Behat/sfBehatPlugin.git plugins/sfBehatPlugin
+git submodule add git://github.com/Behat/sfBehatPlugin.git plugins/sfBehatPlugin
 ```
 
 and enable plugin in your ProjectConfigurations class.
@@ -55,7 +55,7 @@ and enable plugin in your ProjectConfigurations class.
 After installation, you need to create features folders for your applications inside symfony's `test` folder. To do this, simply run:
 
 ``` bash
-$> symfony behat:setup frontend
+symfony behat:setup frontend
 ```
 
 where `frontend` is your application name.
@@ -65,7 +65,7 @@ where `frontend` is your application name.
 To begin with Behat, you need to create your first feature file. Run:
 
 ``` bash
-$> symfony behat:generate-feature frontend main
+symfony behat:generate-feature frontend main
 ```
 
 where `frontend` & `main` is your application & module names to test
@@ -75,19 +75,19 @@ where `frontend` & `main` is your application & module names to test
 You can either run all app tests with:
 
 ``` bash
-$> behat test/features/frontend
+behat test/features/frontend
 ```
 
 or specific feature with:
 
 ``` bash
-$> behat test/features/frontend/main.feature
+behat test/features/frontend/main.feature
 ```
 
 or all frontend features with simply:
 
 ``` bash
-$> behat
+behat
 ```
 
 sfBehatPlugin installs `behat.yml` into your project root. This is a Behat configuration file for sf environment. So, if
@@ -95,7 +95,7 @@ you want to run your symfony features from different directory - specify configu
 (-c|--configuration option) like that:
 
 ``` bash
-$> behat -c ../behat.yml
+behat -c ../behat.yml
 ```
 
 ## Write Features ##
