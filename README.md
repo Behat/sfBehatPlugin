@@ -112,13 +112,16 @@ Behat+Mink provides base steps to run over your application. One of them is `/^I
 <?php
 // ...
 $this->getPathTo = function($page) use($world) {
-    $basePath = $world->getParameter('start_url');
+   $startUrl = rtrim($world->getParameter('start_url'), '/') . '/';
 
-    switch ($page) {
-        case 'homepage':        return $basePath;
-        case 'articles list':   return $basePath . 'articles';
-        default:                return $basePath . ltrim($page, '/');
-    }
+   switch ($path) {
+       // Define custom path aliases here
+       case 'homepage':       $path = '/';
+       case 'articles list':  $path = '/articles';
+       case 'news list':      $path = '/news';
+   }
+
+   return 0 !== strpos('http', $path) ? $startUrl . ltrim($path, '/') : $path;
 };
 ```
 
