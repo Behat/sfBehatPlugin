@@ -1,8 +1,6 @@
 default:
     paths:
         features:       %%BEHAT_CONFIG_PATH%%/../test/features/frontend
-    environment:
+    context:
         parameters:
-            start_url:  ~
-imports:
-    - mink/behat.yml
+            base_url:   ~

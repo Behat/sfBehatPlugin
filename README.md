@@ -6,7 +6,7 @@ sfBehatPlugin is a plugin for symfony applications. It help to write Cucumber-li
 
 ## Requirements:
 
-You need a valid PHPUnit 3.6 installation:
+You need a valid PHPUnit 3.5 installation:
 
 ``` bash
 pear channel-discover pear.phpunit.de
@@ -98,38 +98,9 @@ you want to run your symfony features from different directory - specify configu
 behat -c ../behat.yml
 ```
 
-## Write Features ##
+## Documentation ##
 
-### Write New Steps ###
-
-You can create new steps simply by placing definitions in any `*.php` file under `steps/` folder in your app features.
-
-### Specify App Routes ###
-
-Behat+Mink provides base steps to run over your application. One of them is `/^I am on (.+)$/`. This step tries to load specified page as is, but you can specify path manually in `support/paths.php`:
-
-``` php
-<?php
-// ...
-$this->getPathTo = function($page) use($world) {
-   $startUrl = rtrim($world->getParameter('start_url'), '/') . '/';
-
-   switch ($path) {
-       // Define custom path aliases here
-       case 'homepage':       $path = '/';
-       case 'articles list':  $path = '/articles';
-       case 'news list':      $path = '/news';
-   }
-
-   return 0 !== strpos('http', $path) ? $startUrl . ltrim($path, '/') : $path;
-};
-```
-
-You can list all available steps with:
-
-``` bash
-behat --steps --lang en
-```
+Read Behat docs on [official site](http://docs.behat.org).
 
 ## Contributors ##
 
