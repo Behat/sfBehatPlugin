@@ -26,6 +26,6 @@ class FeatureContext extends Behat\Mink\Behat\Context\MinkContext
             case 'homepage':    $path = '/';
         }
 
-        parent::locatePath($path);
+        return parent::locatePath($path);
     }
 }
