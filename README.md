@@ -19,6 +19,7 @@ pear install phpunit/PHPUnit
 And of course, you need to install Behat and Mink:
 
 ``` bash
+pear channel-discover pear.symfony.com
 pear channel-discover pear.behat.org
 
 pear install behat/behat
